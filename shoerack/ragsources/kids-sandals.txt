@@ -1,0 +1,6 @@
+For Children
+	31	KidSafe Play Sandals Description: Durable sandals with closed toes for added protection. The breathable upper and adjustable straps make them perfect for active kids. Price: $29.99
+	32	SplashFun Aqua Sandals Description: Water-friendly sandals with quick-dry materials and anti-slip soles. Bright, colorful designs make them fun and practical for beach or pool use. Price: $24.99
+	33	RainbowStride Flip-Flops Description: Vibrant flip-flops with soft foam footbeds and comfortable straps. Lightweight and easy to wear, perfect for casual summer outings. Price: $14.99
+	34	MiniTrek Hiker Sandals Description: Lightweight sandals with rugged soles and a padded heel strap. Designed for family hikes or outdoor adventures. Price: $34.99
+	35	DinoPrint Chappals Description: Fun chappals with dinosaur-themed prints and anti-slip soles. The cushioned footbed ensures all-day comfort for playful kids. Price: $19.99

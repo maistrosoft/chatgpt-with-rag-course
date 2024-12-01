@@ -1,0 +1,6 @@
+For Women
+	6	RunEase 500###Description: These running shoes feature a cushioned midsole and arch support tailored for women's biomechanics. The mesh upper keeps feet cool, while the outsole's flex grooves enhance movement.###Price: $89.99
+	7	YogaFlex Comfort Sole###Description: Designed for yoga enthusiasts, these minimalist slip-ons feature a stretch-knit upper and anti-skid rubber soles. The soft, seamless construction reduces pressure points.###Price: $69.99
+	8	ClimbQueen GripTech###Description: Lightweight climbing shoes with an aggressive profile and sticky rubber soles for superior traction on vertical surfaces. Vegan materials and durable stitching ensure sustainability and longevity.###Price: $149.99
+	9	PowerSpin Cycle+###Description: Sleek cycling shoes with a reinforced toe box and SPD cleat compatibility. Made with durable microfiber and ventilation panels, these are ideal for long-distance rides.###Price: $109.99
+	10	TrailGlow Hike Pro###Description: Waterproof hiking shoes with a breathable mesh and leather combination upper. Padded collars and shock-absorbing midsoles make them ideal for long trails and rugged terrain.###Price: $129.99

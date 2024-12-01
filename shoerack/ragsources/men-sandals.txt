@@ -1,0 +1,6 @@
+For Men
+	21	TrailGrip Adventure Sandals###Description: Designed for rugged terrains, these sandals feature a thick, anti-slip rubber sole and adjustable straps for a secure fit. Made with waterproof synthetic leather, they’re perfect for hiking or beach walks.###Price: $59.99
+	22	UrbanFlex Comfort Slides###Description: Minimalist slides with a soft EVA footbed and a textured sole for indoor and outdoor use. Ideal for lounging or quick errands, their lightweight design ensures all-day comfort.###Price: $34.99
+	23	BreezeFlow Fisherman Sandals###Description: Crafted from genuine leather with a cushioned insole, these sandals are both stylish and functional. The closed-toe design protects the foot, making them great for casual outings.###Price: $49.99
+	24	AquaGrip Water Chappals###Description: Lightweight and quick-drying, these chappals feature a textured sole for grip on wet surfaces. Ideal for poolside or water sports.###Price: $29.99
+	25	NatureWalk EcoFlip Chappals###Description: Made from eco-friendly materials, these stylish flip-flops feature a cushioned sole and a durable strap. Perfect for casual walks or beach outings.###Price: $24.99

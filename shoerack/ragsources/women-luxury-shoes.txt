@@ -1,0 +1,6 @@
+For Women
+	46	Elegance Pointed-Toe Pumps###Description: These stunning pumps are made from supple Italian leather with a glossy finish. The pointed toe and 3.5-inch stiletto heel add sophistication, making them perfect for formal occasions or evening wear.###Price: $399.99
+	47	CrystalStep Slingbacks###Description: A glamorous slingback heel featuring sparkling crystal embellishments on the straps. The satin finish and cushioned footbed make these shoes both luxurious and comfortable.###Price: $549.99
+	48	Opulent Velvet Stilettos###Description: Made from rich velvet with gold-tone accents, these stilettos feature a 4-inch heel and a pointed toe. A padded insole ensures they’re as comfortable as they are chic.###Price: $599.99
+	49	Majestic Ankle-Strap Heels###Description: These elegant heels feature a premium suede upper and a metallic ankle strap with adjustable closure. The block heel provides stability without compromising on style.###Price: $449.99
+	50	Regal Loafer Mules###Description: A versatile option, these mule-style loafers are crafted from patent leather with a sleek, minimalist design. Perfect for business or formal settings, they blend comfort with high-end fashion.###Price: $389.99

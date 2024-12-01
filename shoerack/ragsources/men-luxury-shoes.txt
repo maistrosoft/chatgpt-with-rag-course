@@ -1,0 +1,7 @@
+For Men
+	41	Regal Oxford Luxe###Description: Handcrafted from premium Italian calf leather, these classic Oxfords feature a sleek silhouette, fine stitching, and a leather sole with a rubber heel cap for durability. Perfect for formal events or business settings, the cushioned insole ensures comfort throughout the day.###Price: $499.99
+	42	Monarch Wingtip Brogues###Description: These wingtips combine traditional craftsmanship with modern elegance. Made from burnished leather with intricate broguing details, the shoes are paired with a Goodyear-welted sole for longevity.###Price: $429.99
+	43	Velvet King Slip-Ons###Description: A luxurious evening shoe crafted from fine Italian velvet with leather trim. The slip-on design features subtle embroidery, making it an excellent choice for black-tie events.###Price: $599.99
+	44	Polaris Double Monk Strap###Description: Elegant yet versatile, these double monk strap shoes are crafted from polished leather with a slightly elongated toe. The silver-tone buckles add a modern touch to this classic design.###Price: $469.99
+	45	Crown Derby Patent Loafers###Description: Perfect for formal occasions, these patent leather loafers feature a sleek design and a grosgrain ribbon detail across the vamp. The leather sole and padded footbed ensure comfort and style.###Price: $549.99
+

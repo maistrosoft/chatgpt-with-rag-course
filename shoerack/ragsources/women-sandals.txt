@@ -1,0 +1,6 @@
+For Women
+	26	TrailQueen Adventure Sandals###Description: Durable yet feminine, these sandals feature multi-point adjustable straps and a contoured footbed. The rugged outsole provides excellent traction on trails.###Price: $54.99
+	27	CloudStep Arch Sandals###Description: These orthotic sandals are designed for walking, featuring arch support and memory foam padding. The synthetic straps have a stylish design, perfect for everyday wear.###Price: $44.99
+	28	WaveRider Beach Sandals###Description: Vibrant, lightweight sandals with water-resistant straps and a cushioned footbed. Great for beach days or poolside lounging.###Price: $39.99
+	29	LuxeComfort Gladiator Sandals###Description: Elegant leather gladiator sandals with cushioned soles for comfort. Adjustable buckle closures ensure a perfect fit, making them suitable for casual and semi-formal wear.###Price: $69.99
+	30	BloomStride Flip-Flops###Description: Designed for maximum comfort, these flip-flops feature a textured sole for grip and floral-patterned straps. Ideal for summer strolls.###Price: $19.99

@@ -1,0 +1,6 @@
+Unisex Options (Adults and Kids)
+	16	AquaStep Water Shoes###Description: Versatile water shoes with quick-drying mesh and drainage holes. The rubber sole provides grip on slippery surfaces, ideal for kayaking, paddleboarding, or beach trips.###Price: $49.99
+	17	SnowPeak Winter Boots###Description: Insulated boots with a waterproof outer layer and plush fleece lining. Designed for snow activities, the anti-slip sole ensures safety on icy paths.###Price: $99.99
+	18	SkatePro Velocity X###Description: Skate shoes with a durable suede upper and reinforced stitching. The vulcanized rubber outsole offers excellent board grip and flexibility.###Price: $79.99
+	19	EcoStep Recyclers###Description: Made from 100% recycled materials, these walking shoes combine sustainability with comfort. The cushioned insole and grippy outsole are perfect for everyday wear.###Price: $89.99
+	20	AllTerrain Explorer###Description: Built for versatility, these shoes transition seamlessly from hiking to casual wear. Featuring a breathable upper and rugged outsole, they're ideal for active lifestyles.###Price: $99.99

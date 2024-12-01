@@ -1,0 +1,6 @@
+For Men
+	1	StrideRunner Pro 300###Description: Designed for runners, these lightweight shoes feature a breathable mesh upper and a shock-absorbing EVA midsole. The anti-slip rubber outsole ensures stability on wet surfaces, and the ergonomic design reduces foot fatigue. Ideal for both road and trail running.###Price: $89.99
+	2	EverTrek Hiker Max###Description: Perfect for hiking, these shoes have a durable suede upper, waterproof lining, and a reinforced toe cap. The Vibram outsole offers excellent grip on rocky terrain. Cushioned insoles provide comfort on long treks.###Price: $119.99
+	3	CycleFit AeroFlex###Description: With a stiff nylon sole for efficient power transfer, these cycling shoes are made with perforated synthetic leather for breathability. The adjustable ratchet system ensures a snug fit for long rides.###Price: $129.99
+	4	TrailBlaze Climber Xtreme###Description: Built for climbing, these shoes feature a sticky rubber sole for enhanced grip and an asymmetrical design for precise foot placement. The suede upper molds to the foot for a custom fit over time.###Price: $139.99
+	5	UrbanStride Casual Plus###Description: A stylish walking shoe with a full-grain leather upper and memory foam insoles. The lightweight rubber sole ensures comfort for all-day wear, making it perfect for city adventures.###Price: $79.99

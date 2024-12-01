@@ -1,0 +1,5 @@
+.env/**
+**/env/**
+**/mac-env/**
+**/macenv/**
+**/__pycache__/**

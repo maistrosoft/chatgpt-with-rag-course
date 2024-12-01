@@ -1,0 +1,6 @@
+For Children
+	11	KidStride EasyWalkers Description: Lightweight walking shoes with a breathable mesh upper and adjustable Velcro straps for easy wear. The flexible sole supports natural foot movement for growing kids. Price: $39.99
+	12	RunBuddy Junior Racer Description: Perfect for active kids, these running shoes feature cushioned midsoles and durable rubber outsoles. Bright, reflective accents ensure visibility during outdoor play. Price: $49.99
+	13	CycleSnap PedalSafe Description: Cycling shoes with a reinforced toe box and non-slip soles, these are designed to keep kids safe while biking. Made with durable synthetic materials for rough-and-tumble use. Price: $59.99
+	14	GripPaw Climbers Description: Special climbing shoes for kids with sticky rubber soles and hook-and-loop closures for a secure fit. Soft inner lining keeps little feet comfortable. Price: $69.99
+	15	TrailScout Mini Hikers Description: Waterproof hiking shoes with a rugged outsole and padded ankle support. These shoes are perfect for family adventures on trails or in the woods. Price: $69.99

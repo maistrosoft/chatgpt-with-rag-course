@@ -1,0 +1,6 @@
+Unisex Options
+	36	TravelLite Sandals###Description: Minimalist sandals with adjustable Velcro straps and an ergonomic footbed. Designed for long walks or casual wear.###Price: $39.99
+	37	FloatyStep Pool Chappals###Description: Lightweight, colorful chappals with a slip-resistant sole. Perfect for poolside or showers.###Price: $19.99
+	38	EcoHaven Hemp Sandals###Description: Made from sustainable hemp fabric, these unisex sandals feature a flexible rubber sole. Great for eco-conscious shoppers.###Price: $49.99
+	39	TrailRun Active Sandals###Description: With a sporty design, these sandals feature durable straps, shock-absorbing soles, and excellent grip. Ideal for light running or trail walks.###Price: $54.99
+	40	FeatherStep Flip-Flops###Description: Ultra-lightweight flip-flops with a cushioned sole and soft straps. Great for travel or lounging.###Price: $24.99
