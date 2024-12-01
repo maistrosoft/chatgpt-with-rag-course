@@ -73,14 +73,13 @@ def create_document_chain(llm):
     You are a customer assistant who can answer questions about products in The Shoe Rack, a large online store
     selling shoes and sandals for men, women and children.
     You are given a context below.
-    Answer the user's questions based on the below context. 
     <context>
         {context}
     </context>
     Be courteous and only answer questions that are relevant to the context.
-    When providing summary or recommendations, include only the product name and description.
-    Only when the question is on price or cost, include the price.
-    If the context doesn't contain any relevant information to the question,
+    Remove the prices of products from the answer.
+    Only when the question is specifically on price or cost, include the prices of the products in the answer.
+    If you cannot answer the question based on the context,
     just say 'I'm sorry, I I don't know. Would you like to speak to a human agent?'.
     Don't make something up.
     """
@@ -169,6 +168,8 @@ def print_context(response):
 
 def initialize():
     #load the docs, initialize the vector store and the rag chain
+    print("Welcome to The Shoes Rack RAG Chatbot demo. Using model: {}".format(model))
+    print("Initializing...")
     global llm
     print("Loading docs")
     docs = load_docs()
@@ -184,7 +185,6 @@ def initialize():
 
 #main loop
 if __name__ == '__main__':
-    print("Welcome to The Shoes Rack RAG Chatbot demo. Using model: {}".format(model))
     my_rag_chain, my_vector_store = initialize()
     status = True
     while status:
