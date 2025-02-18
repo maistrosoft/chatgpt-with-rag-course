@@ -18,7 +18,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 import json
-import config
+import pprint
 
 from langchain_core.messages import HumanMessage
 
@@ -37,18 +37,19 @@ from langchain.chains import create_retrieval_chain
 #7. start the conversation loop
 
 #global variables for this app
-model = config.MODEL
-temperature = config.TEMPERATURE
+#model = "gpt-3.5-turbo-0125"
+model = "gpt-4o-mini"
+temperature = 0.2
 llm = ChatOpenAI(model=model, temperature=temperature)
-chatHistory = {} #each id has its own chat history, example {'123': [], '456': []}
+my_chat_history = []
 
 def load_docs():
     # Load the contents of the product catalog
     docs = []
 
     #loop through all the files in the directory
-    for d in os.listdir(config.RAGSOURCES):
-        path = os.path.join(config.RAGSOURCES, d)
+    for d in os.listdir("ragsources"):
+        path = os.path.join("ragsources", d)
         txtLoader = TextLoader(path)
         docs2 = txtLoader.load()
         docs.extend(docs2)
@@ -57,7 +58,7 @@ def load_docs():
 
 def process_docs(docs):
     #chunk/split
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=config.CHUNK_SIZE, chunk_overlap=config.CHUNK_OVERLAP)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     splits = text_splitter.split_documents(docs)
     return splits
 
@@ -68,13 +69,26 @@ def create_vectorstore(splits):
 
 def create_document_chain(llm):
     #create the document chain from the llm and the prompt (which stores history)
-    system_template = config.SYSTEM_TEMPLATE + """<context>{context}</context>"""
+    SYSTEM_TEMPLATE = """
+    You are a customer assistant who can answer questions about products in The Shoe Rack, a large online store
+    selling shoes and sandals for men, women and children.
+    You are given a context below.
+    <context>
+        {context}
+    </context>
+    Be courteous and only answer questions that are relevant to the context.
+    Remove the prices of products from the answer.
+    Only when the question is specifically on price or cost, include the prices of the products in the answer.
+    If you cannot answer the question based on the context,
+    just say 'I'm sorry, I I don't know. Would you like to speak to a human agent?'.
+    Don't make something up.
+    """
     
     question_answering_prompt = ChatPromptTemplate.from_messages(
         [
             (
                 "system",
-                system_template,
+                SYSTEM_TEMPLATE,
             ),
             MessagesPlaceholder("chat_history"),
             ("human", "{input}"),
@@ -84,9 +98,9 @@ def create_document_chain(llm):
     document_chain = create_stuff_documents_chain(llm, question_answering_prompt)
     return document_chain
 
-def create_retriever(vectorStore, k=config.TOP_K):
+def create_retriever(vectorStore, k=10):
     #retrieve the top K relevant matches from the vector store
-    retriever = vectorStore.as_retriever(k=k)
+    retriever = vectorStore.as_retriever(k=10)
     return retriever
 
 def create_my_history_aware_retriever(llm, retriever):
@@ -111,39 +125,22 @@ def create_rag_chain(history_aware_retriever, document_chain):
     rag_chain = create_retrieval_chain(history_aware_retriever, document_chain)
     return rag_chain
 
-# def clear_history():
-#     #clear the history
-#     global my_chat_history
-#     my_chat_history = []
-#     if config.INFO_LOG:
-#         print("History cleared!")
-
-def clear_history(id):
-    global chatHistory
-    chatHistory.update({id: []})
-    if config.INFO_LOG:
-        print("History cleared!")
+def clear_history():
+    #clear the history
+    global my_chat_history
+    my_chat_history = []
+    print("History cleared!")
 
 def cleanup(vector_store):
     #delete the collection
     vector_store.delete_collection()
 
-# def query(rag_chain, q):
-#     #pass the question and history to the rag chain and get the response
-#     global my_chat_history
+def query(rag_chain, q):
+    #pass the question and history to the rag chain and get the response
+    global my_chat_history
 
-#     response = rag_chain.invoke({"input": q, "chat_history": my_chat_history})
-#     my_chat_history.extend([HumanMessage(content=q), response["answer"]])
-#     return response
-
-def query(ragChain, q, id):
-    global chatHistory
-    if id not in chatHistory:
-        chatHistory.update({id: []})
-
-    myChatHistory = chatHistory[id]
-    response = ragChain.invoke({"input": q, "chat_history": myChatHistory})
-    myChatHistory.extend([HumanMessage(content=q), response["answer"]])
+    response = rag_chain.invoke({"input": q, "chat_history": my_chat_history})
+    my_chat_history.extend([HumanMessage(content=q), response["answer"]])
     return response
 
 def create_json(answer):
@@ -159,7 +156,7 @@ def create_json(answer):
         try:
             structured_answer = json.loads(answer)
         except Exception as e:
-            structured_answer = {"summary" : answer, "disclaimer" : config.DISCLAIMER}
+            structured_answer = {"summary" : answer, "disclaimer" : "As an AI model, I can be occasionally wrong or incomplete in my answers. Kindly check with human experts if you are unsure about the answer."}
             
     return structured_answer, was_json 
 
@@ -170,64 +167,41 @@ def print_context(response):
         print(document)
 
 def initialize():
-    global llm
-    global chatHistory
-
     #load the docs, initialize the vector store and the rag chain
-    print(config.GREETING)
-    if config.SHOW_MODEL_INFO:
-        print("Using model: {}".format(model))
-    if config.INFO_LOG:
-        print("Initializing...")
-        print("Loading docs")
+    print("Welcome to The Shoes Rack RAG Chatbot demo. Using model: {}".format(model))
+    print("Initializing...")
+    global llm
+    print("Loading docs")
     docs = load_docs()
-    if config.INFO_LOG:
-        print("Done!")
-        print("Processing docs")
+    print("Processing docs")
     splits = process_docs(docs)
-    if config.INFO_LOG:
-        print("Creating vector store")
+    print("Creating vector store")
     vector_store = create_vectorstore(splits)
-    if config.INFO_LOG:
-        print("Creating retriever")
     retriever = create_retriever(vector_store, 10)
-    if config.INFO_LOG:
-        print("Creating history aware retriever")
     history_aware_retriever = create_my_history_aware_retriever(llm, retriever)
-    if config.INFO_LOG:
-        print("Creating document chain")
     document_chain = create_document_chain(llm)
-    if config.INFO_LOG:
-        print("Creating rag chain")
     rag_chain = create_rag_chain(history_aware_retriever, document_chain)
-    if config.INFO_LOG:
-        print("All done!")
-    chatHistory = {} #each id has its own chat history, example {'123': [], '456': []}
     return rag_chain, vector_store
 
 #main loop
 if __name__ == '__main__':
-    #used to store chat history for this user
-    id=config.DEFAULT_USERID
     my_rag_chain, my_vector_store = initialize()
     status = True
     while status:
-        q = input(config.USER_PROMPT)
+        q = input("How can I help you?\n---- To clear history, enter 'clear'\n---- To exit enter 'bye' or 'exit' or just press enter\nEnter your query:")
         if q != "":
             if q.lower() == "clear":
                 clear_history()
             elif q.lower() == "exit" or q.lower() == "bye" or q.lower() == "quit" or q.lower() == "end":
                 status = False
             else:
-                response = query(my_rag_chain, q, id)
+                response = query(my_rag_chain, q)
                 answer = response["answer"]
                 print(answer)
-                if config.SHOW_CONTEXT:
-                    struct_answer, was_json = create_json(answer)
-                    struct_answer["context"] = response["context"]
-                    print(struct_answer)
+                #struct_answer, was_json = create_json(answer)
+                #struct_answer["context"] = response["context"]
+                #print(struct_answer)
         else:
             status = False
-    if config.INFO_LOG:
-        print("Cleaning up")
+    print("Cleaning up")
     cleanup(my_vector_store)

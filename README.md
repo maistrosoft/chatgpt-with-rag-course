@@ -1,45 +1,55 @@
-This contains code for a RAG based chatbot built using ChatGPT.
+This repo contains three examples
+---------------------------------
 
-Name the flask app application.py.  This is IMPORTANT!
+1. helloworld
+This is a simple example to show how to communicate with ChatGPT API using Python
 
-To start the flask app
-    python application.py
-To install in ec2 linux
-    #!/bin/bash
-    sudo yum -y install python-pip
-    python3 -m pip install --upgrade pip
-    cd /home/ec2-user
-    aws s3 cp --recursive s3://maistro.thirukkural.chatbot.code .
-    python3 -m venv virtenv
-    source virtenv/bin/activate
-    python3 -m pip install -r requirements.txt
-    export OPENAI_API_KEY="xxx"
-    nohup gunicorn -b 0.0.0.0:8000 application:app &
+2. coffeeshop
+This shows how to use ChatGPT API (OpenAI APIs) to create simple chatbots with history
 
-To test locally
-    python terminal-chat.py
+3. shoerack
+This shows how you can build a RAG based ChatGPT with history, using 
+LangChain, Chroma vector store and OpenAI embeddings.
 
-Create the virtual env and test the app
-    python -m venv macenv
-    source macenv/bin/activate
-    python -m pip install -r requirements.txt
-    python application.py
-    on another terminal window
-        source macenv/bin/activate
-        python chat.py
+Steps to run the examples
+-------------------------
+1. 
+    Go to the directory where the python program is located.
+    For example, to run hello-world.py, first cd to the helloworld directory
+        cd helloworld
 
-Initialize elastic beanstalk
-    eb init -p python-3.12 eb-chatbot --region us-east-1 --profile maistro-admin
+2.
+    Setup a virtual environment.
+    For example, on the mac, type
+        python -m venv [name_of_env]
 
-(Optional) Configure default keypair
-    eb init --profile maistro-admin
+    Note: These examples were set up to run on Python Version 3.12 and Pip3
+    To find out the version of python and pip on your system, type
+        python --version
+        pip --version
 
-Create environment and deploy app with eb create
-    eb create eb-chatbot-env --vpc.publicip --profile maistro-admin
+    On Windows,
+        Follow commands provided in the presentation
 
-Open and test website
-    eb open --profile maistro-admin
-    (You should get hello message from chatbot when you hit the URL)
-    
-Terminate environment
-    eb terminate --profile maistro-admin
+3.  Activate the virtual environment
+    For example, on the mac, type
+        source [name_of_env]/bin/activate
+
+    On Windows,
+        Follow commands provided in the presentation
+
+4.
+    Install all the required libraries.
+    Type
+        pip install -r requirements.txt
+
+5.
+    Run the python program in the directory.
+    For example, inside helloworld directory,
+    Type
+        python hello-world.py
+
+6.
+    After you are done, deactivate the environment.
+    Type
+        deactivate
